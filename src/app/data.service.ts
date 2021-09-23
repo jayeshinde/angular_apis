@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { User } from './users'
+import { Observable } from "rxjs";
 
 
 @Injectable({
@@ -9,7 +9,6 @@ import { User } from './users'
 export class DataService {
   constructor(private http: HttpClient) {}
   getUsers() {
-    console.log('before response')
     return this.http.get<any[]>("https://reqres.in/api/users");
   }
 }
